@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import CreatePoint from "./Components/CreatePoint";
 import View from "./Components/View";
+import "./style.css";
 
 function App() {
     return (
