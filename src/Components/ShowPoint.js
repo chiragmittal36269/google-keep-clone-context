@@ -80,6 +80,9 @@ function ShowPoint() {
                             </div>
                         </div>
                     ))}
+                {!allowEditing && filteredNotes.length === 0 && (
+                    <h3 style={{ fontSize: "3vw" }}>No Data Matched</h3>
+                )}
             </div>
 
             {allowEditing && (
@@ -107,18 +110,26 @@ function ShowPoint() {
                                 handleInputChange("content", e.target.value)
                             }></textarea>
 
-                        {/* Save button to submit the edited note */}
-                        <button type="submit">Save</button>
+                        <div className="buttons">
+                            {/* Save button to submit the edited note */}
+                            <button type="submit" className="button">
+                                Save
+                            </button>
 
-                        {/* Delete button to delete the edited note */}
-                        <button onClick={() => deleteNote(copyEditNote)}>
-                            Delete
-                        </button>
+                            {/* Delete button to delete the edited note */}
+                            <button
+                                onClick={() => deleteNote(copyEditNote)}
+                                className="button">
+                                Delete
+                            </button>
 
-                        {/* Cancel button to cancel the editing mode */}
-                        <button onClick={() => setAllowEditing(false)}>
-                            Cancel
-                        </button>
+                            {/* Cancel button to cancel the editing mode */}
+                            <button
+                                onClick={() => setAllowEditing(false)}
+                                className="button">
+                                Cancel
+                            </button>
+                        </div>
                     </form>
                 </div>
             )}

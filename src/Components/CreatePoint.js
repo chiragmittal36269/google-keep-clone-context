@@ -30,6 +30,7 @@ function CreatePoint() {
         setNotes(updatedNotes);
         localStorage.setItem("notesAvailable", JSON.stringify(updatedNotes));
         setNewNotes({ title: "", content: "" });
+        navigate("/");
     }
 
     function handleCancel() {
